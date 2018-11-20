@@ -9,8 +9,8 @@ The URL for the notebook and the password to access it will have been emailed to
 
 Please click on the link in the email and enter the provided password.
 
-Once you are viewing the notebook [ENTER NOTEBOOK NAME HERE], please follow the instructions
-in the notebook to run a search or generate a graph.
+Once you are viewing the notebook `Arxiv Search`, please follow the instructions
+in the notebook to run a search or generate a chart.
 
 ## Sharing and Extended Use
 
@@ -28,6 +28,33 @@ this level of complexity was postponned until the tool is validated.
 
 ## Troubleshooting
 
+### No Results
+
+##### Malformed Queries
+
+A search which returns no results might be due to a malformed query.
+
+```python
+query_str = "bad publish:2018"
+```
+
+This query is trying to search on a field `publish` but no such field exists.
+
+```python
+query_str = "good published:2018"
+```
+
+This version should work.
+
+##### Difficult Characters
+
+The text corpus that is being searched was extracted from PDF documents. This
+extraction process is not foolproof and has many strange characters as artifacts.
+If you are searching for a person's name which contains a special character
+or for a word which does not appear in English you may get zero results.
+
+Searching for Math is not generally expected to work.
+
 ### Slow queries
 
 It is expected that some queries will take 30 seconds or more to return. If it is
@@ -37,3 +64,25 @@ may clear the problem.
 
 If a query consistently fails to return results or hangs try a few modifications
 of the query string and then reach out for help.
+
+## System Administration
+
+### Sessions
+
+The jupyter notebook is run under a screen session names `jupyter`.
+
+After login re-attach to this session with `screen -r jupyter`
+
+Detach from this session by either closing the terminal window or typing `screen -d`.
+
+If you need to create a new named screen session type `screen -S <session name>`
+
+### Starting Jupyter
+
+To start jupyter run `jupyter notebook --ip=0.0.0.0`. Note that the default IP address is 
+`localhost` which is not world accessible.
+
+### Configuring the Password
+
+The initial and subsequent configuration of a password is done by running 
+`jupyter notebook password`.
