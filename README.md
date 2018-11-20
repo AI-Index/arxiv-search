@@ -36,4 +36,4 @@ and re-running the Setup cells in the notebook before re-running the query cell
 may clear the problem. 
 
 If a query consistently fails to return results or hangs try a few modifications
-of the query string and then reach out for help. 
+of the query string and then reach out for help.
