@@ -64,7 +64,7 @@ def main():
             writer = get_writer(ix)
             total_count += save_inc
             count = 0
-            print("Total papers saved {}".format(total_count))
+            print("Total papers indexed this session: {}".format(total_count))
         data = db[pid]
         idvv = '{}v{}'.format(data['_rawid'], data['_version'])
         text_filename = idvv + '.pdf.txt'
@@ -82,7 +82,7 @@ def main():
     start = time()
     writer.commit()
     print("Final save took {} seconds".format(time() - start))
-    print("Total saved documents: {}".format(total_count))
+    print("Total index documents this session: {}".format(total_count))
 
 if __name__ == '__main__':
     main()
