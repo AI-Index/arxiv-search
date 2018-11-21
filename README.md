@@ -98,9 +98,13 @@ create_index.py - This will create the index directory and the initial schema fo
 ### Incrementally add new papers
 
 fetch_papers.py - Find details of new papers that don't exist in db.p
+
 download_pdfs.py - Get PDFs for papers we don't have txt files for in reverse chrono order.
+
 parse_pdf_to_text.py - Extract txt content from pdfs.
+
 update_index.py - Add new txt files into the Whoosh index
+
 
 ## System Administration
 
