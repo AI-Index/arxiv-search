@@ -25,8 +25,12 @@ def clean_text(text):
     return text.replace("\n", " ").replace("  ", " ").strip()
 
 def create_results_csv(db, query, results):
+    res_dir = "results"
+    if not os.path.exists(res_dir):
+      print('creating ', res_dir)
+      os.makedirs(res_dir)
     csv_filename = "q-results-{}.csv".format(int(time()))
-    outpath = os.path.join("results", csv_filename)
+    outpath = os.path.join(res_dir, csv_filename)
     with open(outpath, 'w') as fh:
         writer = csv.writer(fh)
         writer.writerow([query])
