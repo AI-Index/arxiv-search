@@ -65,6 +65,16 @@ may clear the problem.
 If a query consistently fails to return results or hangs try a few modifications
 of the query string and then reach out for help.
 
+
+### 'Notebook changed on disk'
+
+Notebooks are not good at being used in multiple tabs or by multiple people. If you
+save a change to your notebook in one tab it may cause a warning or error to
+show up in any other tab that has the notebook open.
+
+Try to only have the notebook open in only one tab at a time or you risk losing
+work.
+
 ## System Administration
 
 ### Sessions
