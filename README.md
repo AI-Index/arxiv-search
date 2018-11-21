@@ -75,6 +75,33 @@ show up in any other tab that has the notebook open.
 Try to only have the notebook open in only one tab at a time or you risk losing
 work.
 
+## Dev Setup
+
+Important: Getting data out of arxiv.org is extremely slow. If you need to
+completely re-create this index for some reason it would be best to ask for
+as new a copy of the data from karpathy as possible. He might be willing to
+rsync you a zip of the db and text files which is all you really need to save
+*weeks* of downloading.
+
+### Requirements
+
+python 3.6
+
+### Install
+
+pip install -r requirements.txt
+
+### First time
+
+create_index.py - This will create the index directory and the initial schema for whoosh
+
+### Incrementally add new papers
+
+fetch_papers.py - Find details of new papers that don't exist in db.p
+download_pdfs.py - Get PDFs for papers we don't have txt files for in reverse chrono order.
+parse_pdf_to_text.py - Extract txt content from pdfs.
+update_index.py - Add new txt files into the Whoosh index
+
 ## System Administration
 
 ### Sessions
